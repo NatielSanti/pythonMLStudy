@@ -1,13 +1,10 @@
-import pandas as pd
-import pylab as pl
-import numpy as np
-import scipy.optimize as opt
-from sklearn import preprocessing
-from sklearn.model_selection import train_test_split
 import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
 from sklearn import svm
 from sklearn.metrics import classification_report, confusion_matrix
 from sklearn.metrics import f1_score
+from sklearn.model_selection import train_test_split
 
 if __name__ == '__main__':
     cell_df = pd.read_csv("../resources/cell_samples.csv")

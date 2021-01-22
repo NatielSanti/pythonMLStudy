@@ -1,13 +1,6 @@
-from io import StringIO
-
-import matplotlib.image as mpimg
-import matplotlib.pyplot as plt
-import numpy as np
 import pandas as pd
-import pydotplus
 from sklearn import metrics
 from sklearn import preprocessing
-from sklearn import tree
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
 
