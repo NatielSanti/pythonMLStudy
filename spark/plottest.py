@@ -1,6 +1,5 @@
 from pyspark import SparkContext, SparkConf
 from pyspark.sql import SparkSession
-from pyspark.sql.functions import col
 import matplotlib.pyplot as plt
 
 if __name__ == '__main__':
