@@ -14,11 +14,17 @@ if __name__ == '__main__':
     spark.sql("SELECT * FROM washing").show()
 
     result = spark.sql("select voltage,ts from washing where voltage is not null order by ts asc")
+    # result_rdd = result.rdd.sample(False, 0.1).map(lambda row: (row.ts, row.voltage)).collect()
+    # print(result_rdd.__sizeof__())
+    # print(result_rdd[0])
+    # print(result_rdd)
+    # result_array_ts = result_rdd.map(lambda ts_voltage: ts_voltage[0]).collect()
+    # result_array_voltage = result_rdd.map(lambda ts_voltage: ts_voltage[1]).collect()
+
     result_rdd = result.rdd.sample(False, 0.1).map(lambda row: (row.ts, row.voltage))
-    print(result_rdd.__sizeof__())
-    print(result_rdd)
     result_array_ts = result_rdd.map(lambda ts_voltage: ts_voltage[0]).collect()
     result_array_voltage = result_rdd.map(lambda ts_voltage: ts_voltage[1]).collect()
+
     print(result_array_ts[:15])
     print(result_array_voltage[:15])
 
