@@ -18,6 +18,7 @@ if __name__ == '__main__':
 
     # Normalize data
     X = preprocessing.StandardScaler().fit(X).transform(X)
+    print(X[0])
 
     # prepare test and train sets
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=4)
